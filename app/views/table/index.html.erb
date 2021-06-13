@@ -1,12 +1,42 @@
+<style>
+li{
+  list-style-type: none;
+
+}
+.card{
+  display: flex;
+  flex-direction: column
+  justify-content: flex-start;
+  background: #EFBFCF;
+  border-radius: 1vh;
+  width: 8vw;
+  height: 7vw;
+  margin: 2vh;
+}
+.content{
+  display: flex;
+  padding: 1vh;
+  flex-direction: column
+}
+.card h4 {
+  font-size: .8em;
+}
+
+</style>
 <div class="container">
   <div class="row">
     <ul>
     <% @elements["order"].each do |element| %>
       <li>
-        <%= @elements[element]["name"] %>
-        <%= @elements[element]["number"] %>-
-        <%= @elements[element]["period"] %>,
-        <%= @elements[element]["atomic_mass"] %>
+      <div class="card">
+      <div class="content">
+        <h4><b><%= @elements[element]["number"] %></b></h4>
+        <h2><b><%= @elements[element]["symbol"] %></b></h2>
+        <small><%= @elements[element]["name"] %></small>
+        <small><%= @elements[element]["atomic_mass"] %></small>
+        </div>
+        
+        </div>
       </li>
     <% end %>
     </ul>
