@@ -13,7 +13,7 @@ li{
   background:#FFBC42;
 }
 .nonmetal{
-  background:#D81159;
+  background:#46BD83;
 }
 .alkali{
   background:#8F2D56;
@@ -39,7 +39,8 @@ li{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -50%);
+  margin-bottom: 10vh;
 }
 .card{
   display: flex;
@@ -49,6 +50,12 @@ li{
   padding: .3em .3em;
   border-radius: .5em;
   box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.empty{
+  color:black;
+  text-align: center;
+  font-size: 1em;
+
 }
 
 .card:hover {
@@ -84,7 +91,7 @@ li{
   <div class="periodic-table">
     <% @elements["order"].each do |element| %>
       
-      <div class="card <%= @elements[element]["category"] %>" style={{grid-row:<% @elements[element]["xpos"] %> }}>
+      <div class="card <%= @elements[element]["category"] %>" style="grid-area: <%= @elements[element]["ypos"]%>/<%= @elements[element]["xpos"]%>" >
 
         <div class="content">
           <h4><b><%= @elements[element]["number"] %></b></h4>
@@ -100,9 +107,9 @@ li{
         </div>
 
       </div>
-      </li>
     <% end %>
-    </ul>
+    <div class="empty card " style="grid-area: 6/3 "><b>57-71</b></div>
+    <div class="empty card " style="grid-area: 7/3 "><b>89-103</b></div>
     </div>
   </div>
 </div>
