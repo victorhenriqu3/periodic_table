@@ -1,45 +1,109 @@
 <style>
 li{
   list-style-type: none;
+}
 
+.earth{
+  background: #EC674E;
+}
+.post-transition{
+  background:#218380;
+}
+.noble{
+  background:#FFBC42;
+}
+.nonmetal{
+  background:#D81159;
+}
+.alkali{
+  background:#8F2D56;
+}
+.transition{
+  background:#58586B;
+}
+.metalloid{
+  background:#73D2DE;
+}
+.lanthanide{
+  background:#4AABAF;
+}
+.actinide{
+  background:#732E4C;
+}
+
+.periodic-table{
+  display: grid;
+  grid-template-columns: repeat(18, 9vh);
+  grid-template-rows: repeat(10, 9vh);
+  grid-gap: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
 }
 .card{
   display: flex;
-  flex-direction: column
-  justify-content: flex-start;
-  background: #EFBFCF;
-  border-radius: 1vh;
-  width: 8vw;
-  height: 7vw;
-  margin: 2vh;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  padding: .3em .3em;
+  border-radius: .5em;
+  box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.5, 1.5);
+  z-index: 1;
+}
+.shells{
+  display: flex;
+  flex-direction: column;
+  font-size: .5em;
+  
 }
 .content{
   display: flex;
-  padding: 1vh;
   flex-direction: column
 }
 .card h4 {
-  font-size: .8em;
+  font-size: .6em;
+   margin: 0;
+}
+.card h2 {
+  font-size: 2em;
+  margin: 0;
+}
+.card small{
+  font-size: .6em;
+   margin: 0;
 }
 
 </style>
 <div class="container">
   <div class="row">
-    <ul>
+  <div class="periodic-table">
     <% @elements["order"].each do |element| %>
-      <li>
-      <div class="card">
-      <div class="content">
-        <h4><b><%= @elements[element]["number"] %></b></h4>
-        <h2><b><%= @elements[element]["symbol"] %></b></h2>
-        <small><%= @elements[element]["name"] %></small>
-        <small><%= @elements[element]["atomic_mass"] %></small>
+      
+      <div class="card <%= @elements[element]["category"] %>" style={{grid-row:<% @elements[element]["xpos"] %> }}>
+
+        <div class="content">
+          <h4><b><%= @elements[element]["number"] %></b></h4>
+          <h2><b><%= @elements[element]["symbol"] %></b></h2>
+          <small><%= @elements[element]["name"] %></small>
+          <small><%= @elements[element]["atomic_mass"] %></small>
         </div>
-        
+
+        <div class="shells">
+        <% for  @shell in @elements[element]["shells"] %>
+        <small><%= @shell %></small>
+        <% end  %>
         </div>
+
+      </div>
       </li>
     <% end %>
     </ul>
+    </div>
   </div>
 </div>
 
