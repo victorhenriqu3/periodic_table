@@ -1,10 +1,11 @@
-# Avaliação de Desenvolvedor - App Tabela Periódica
+# App Tabela Periódica
+
+Projeto realizado para aprimorar conhecimentos no Modelo MVC do Ruby on Rails,
 
 Olá, logo começaremos os trabalhos! Mas primeiro um comentário importante. Você encontrará uma lista de tarefas logo abaixo. Não é necessário realizar todas, mas quanto mais avançar melhor para sua avaliação.
 
-Durante as 48h da avaliação, você poderá fazer perguntas para esclarecer dúvidas que tenha. Mas tente ler todo o texto, pois nele contém algumas informações bem importantes pra realização da mesma.
 
-Este pacote contém uma aplicação RubyOnRails funcional. Você não precisará criar um app do zero. Somente precisamos que você faça algumas melhorias nele.
+Este pacote contém uma aplicação RubyOnRails funcional. Você não precisará criar um app do zero.
 
 ## Como se localizar na aplicação?
 
@@ -98,14 +99,3 @@ config.hosts << "3000-c369a0f3-02ba-4978-b123-20fd29e6dd77.ws-eu03.gitpod.io"
 
 Você precisará colocar essa linha de configuração no `config/application.rb`
 
-## Como devo entregar o código?
-
-Todo trabalho desenvolvido deve ser entregue através de um repositório público no https://github.com.
-
-E deve estar compatível com o ambiente do Gitpod, que é por onde faremos a avaliação do seu trabalho.
-
-## Boa sorte!
-
-Se tiver qualquer problema, entre em contato.
-
-Abraços.
