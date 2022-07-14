@@ -1,7 +1,77 @@
-<div class="content">
-<div class="Row">
- <div class="card-body">
-        
+<div class='container'>
+<div class="content justify-content-center ">
+      <div class="card <%= @element["category"] %>" >
+
+        <div class="content">
+          <h4><strong><%= @element["number"] %></strong></h4>
+          <h2><strong><%= @element["symbol"] %></strong></h2>
+          <small><%= @element["name"] %></small>
+          <small><%= @element["atomic_mass"] %></small>
+        </div>
+
+        <div class="shells">
+          <% for  @shell in @element["shells"] %>
+          <small><%= @shell %></small>
+          <% end  %>
+        </div>
+
       </div>
-</div>
+      <div class="row mt-5">
+       <div class="col">
+       <table class="table table-dark w-100">
+      
+        <tr>
+        <td class="table-active text-right">Name<td>
+         <td ><%= @element["name"] %></td>
+        </tr>
+        <td class="table-active text-right">Atomic number<td>
+         <td ><%= @element["number"] %></td>
+        </tr>
+         <tr>
+        <td class="table-active text-right">Atomic mass<td>
+         <td ><%= @element["atomic_mass"] %></td>
+        </tr>
+        <td class="table-active text-right">Phase<td>
+         <td ><%= @element["phase"] %></td>
+        </tr>
+
+         <tr>
+        <td class="table-active text-right">Category<td>
+         <td ><%= @element["category"] %></td>
+        </tr>
+         <tr>
+        <td class="table-active text-right">Electron configuration<td>
+         <td ><%= @element["electron_configuration"] %></td>
+        </tr>
+         <tr>
+        <td class="table-active text-right">Appearance<td>
+         <td ><%= @element["appearance"] %></td>
+        </tr>
+        <td class="table-active text-right">Density<td>
+         <td ><%= @element["density"] %></td>
+        </tr>
+         <tr>
+        <td class="table-active text-right">Boiling point<td>
+         <td ><%= @element["boil"] %> K</td>
+        </tr>
+         <tr>
+        <td class="table-active text-right">Melting point<td>
+         <td ><%= @element["melt"] %> K</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col">
+     <p class='mt-5 mb-5'><%= @element['summary']%></p>
+
+      <span>Discovered by: <strong><%= @element['discovered_by']%></strong></span>
+      <% if @element['named_by'] -%>
+      <span>||</span>
+      <span> Named by: <strong><%= @element['named_by']%></strong></span>
+      <% end -%>
+   
+    </div>
+      
+
+     
+      
 </div>

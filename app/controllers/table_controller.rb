@@ -5,5 +5,8 @@ class TableController < ApplicationController
   end
 
   def show
+    file = File.read('db/data.json')
+    elem = JSON.parse(file)
+    @element = elem[params[:id]]
   end
 end

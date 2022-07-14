@@ -13,3 +13,93 @@
  *= require_tree .
  *= require_self
  */
+ body{
+  background:#333;
+  color:aliceblue
+ }
+
+ li{
+  list-style-type: none;
+}
+
+.earth{
+  background: #EC674E;
+}
+.post-transition{
+  background:#218380;
+}
+.noble{
+  background:#FFBC42;
+}
+.nonmetal{
+  background:#46BD83;
+}
+.alkali{
+  background:#8F2D56;
+}
+.transition{
+  background:#58586B;
+}
+.metalloid{
+  background:#73D2DE;
+}
+.lanthanide{
+  background:#4AABAF;
+}
+.actinide{
+  background:#732E4C;
+}
+
+.periodic-table{
+  display: grid;
+  grid-template-rows: repeat(10, 9vh);
+  grid-gap: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 10vh;
+}
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 8vh;
+  padding: .3em .3em;
+  border-radius: .5em;
+  box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.empty{
+  color:black;
+  text-align: center;
+  font-size: 1em;
+
+}
+
+.card:hover {
+  transform: scale(1.5, 1.5);
+  z-index: 1;
+}
+.shells{
+  display: flex;
+  flex-direction: column;
+  font-size: .5em;
+  
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card h4 {
+  font-size: .6em;
+   margin: 0;
+}
+.card h2 {
+  font-size: 2em;
+  margin: 0;
+}
+.card small{
+  font-size: .6em;
+   margin: 0;
+}
